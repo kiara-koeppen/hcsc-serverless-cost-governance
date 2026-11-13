@@ -106,6 +106,8 @@ q AS (                     -- statements, tagged with what triggered them
     client_application,
     CASE
       WHEN query_source.genie_space_id IS NOT NULL       THEN 'Genie space'
+      -- Genie SQL with no space id (for example Genie One / Genie Code)
+      WHEN client_application ILIKE '%genie%'            THEN 'Genie (no space id)'
       WHEN query_source.dashboard_id IS NOT NULL
         OR query_source.legacy_dashboard_id IS NOT NULL  THEN 'Dashboard'
       WHEN query_source.alert_id IS NOT NULL             THEN 'Alert'

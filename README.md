@@ -94,6 +94,11 @@ also have **required tag key** (default ANY), whose options are the attribution 
 `system.compute.warehouses`, `system.query.history`, and AI/BI dashboard parameters are all GA. Nothing in this repo
 uses a Preview or Beta table.
 
+**Tested on (November 2026):** every dashboard dataset and both scripts run on real system-table data in an
+AWS account (e2-demo-field-eng) and an **Azure** account (field-eng-east, 510 workspaces, 1.2M billing rows and
+628K queries per week), including Azure regional SKUs such as `PREMIUM_SERVERLESS_REAL_TIME_INFERENCE_US_EAST_2`
+and provider SKUs such as `PREMIUM_ANTHROPIC_MODEL_SERVING`.
+
 ## Deploy and run
 
 ### Dashboard (no code)
